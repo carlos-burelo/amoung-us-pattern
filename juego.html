@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="juego.css" />
+    <script defer type="module" src="juego.js"></script>
+    <title>Neuro desafio</title>
+  </head>
+  <body>
+    <header>
+      <h1>Neurodesafio</h1>
+      <div class="puntaje">
+        <p>Puntaje: <span id="puntaje">0</span></p>
+        <p>Nivel: <span id="nivel">1</span></p>
+      </div>
+    </header>
+
+    <div class="tableros">
+      <div class="tablero" id="tablero-robot"></div>
+      <div class="tablero" id="tablero-usuario"></div>
+    </div>
+
+    <footer>
+      <button id="inicio">Iniciar</button>
+      <button id="ayuda">Ayuda</button>
+    </footer>
+
+    <div id="modalGanador" class="modal">
+      <div class="modal-content">
+        <h2>¡Ganaste!</h2>
+        <p>Felicidades, has superado el nivel.</p>
+        <button id="avanzarNivel">Avanzar al siguiente nivel</button>
+      </div>
+    </div>
+
+    <div id="modalPerdedor" class="modal">
+      <div class="modal-content">
+        <h2>¡Perdiste!</h2>
+        <p>Mejor suerte la próxima vez.</p>
+        <button id="reiniciarJuego">Reiniciar juego</button>
+      </div>
+    </div>
+
+    <div id="modalInformacionNivel" class="modal">
+      <div class="modal-content">
+        <div id="screen"></div>
+        <button id="iniciarNivel">Iniciar nivel</button>
+      </div>
+    </div>
+
+    <div id="modalAyuda" class="modal">
+      <div class="modal-content">
+        <div class="screen">
+          <h2>¡Bienvenido al Neurodesafío!</h2>
+          <p>
+            Instrucciones para jugar: Objetivo: Memoriza y reproduce los
+            patrones. Haz clic en "Iniciar" para ver un patrón en el tablero de
+            la derecha. Observa cuidadosamente los botones que se iluminan en
+            secuencia. Después de que el patrón se muestre, haz clic en los
+            mismos botones en el tablero de la izquierda en el mismo orden. ¡Si
+            aciertas el patrón, avanzarás al siguiente nivel! Consejos: ¡Cuanto
+            más rápido completes el patrón, más puntos obtendrás! Cada nivel
+            presenta un nuevo desafío de patrones. ¡Asegúrate de prestar
+            atención! ¡Diviértete y desafía tu memoria en el Neurodesafío!
+          </p>
+          <button id="cerrarAyuda">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

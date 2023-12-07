@@ -1,0 +1,202 @@
+/* Colores */
+:root {
+  --primary-color: #3f4fc5;
+  --secondary-color: #3fa8c5;
+  --tertiary-color: #a1eafb;
+  --background-color: #fff;
+  --button-background: #e4e4e4;
+}
+
+/* Estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  background-image: url(./fondo.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+
+}
+
+#startButton {
+  padding: 1em;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  font-weight: 600;
+  border: none;
+  border-radius: .5em;
+  font-size: 20px;
+  cursor: pointer;
+  transition: .25s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+#startButton:hover {
+  background-color: var(--secondary-color);
+} 
+
+.controls {
+  margin-bottom: 20px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 300px;
+}
+
+article {
+  display: flex;
+  justify-content: center;
+  gap: 10em;
+  align-items: center;
+}
+
+.board button {
+  display: block;
+  aspect-ratio: 1;
+  border-radius: 1em;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out;
+  /* 3d effect */
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  background-color: #6a6a6a;
+  border: 2px solid #000000;
+}
+
+.board button.on {
+  background-color: #57a3ed;
+}
+
+#user, .card-robot {
+  padding: 2em;
+  background-color: #a3a3a3;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  border: solid 2px #000;
+}
+
+#loserModal .modal-content {
+  background-image: url(./loose-screen.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.card-robot {
+  width: 300px;
+}
+
+#robot {
+  background-color: #000;
+  width: 100%;
+}
+
+#robot button {
+  background-color: #000;
+}
+
+
+#robot button.on {
+  background-color: #57a3ed;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  margin: auto;
+  padding: 20px;
+  /* width: 60%; */
+  height: 500px;
+  text-align: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;  
+}
+
+.modal-content p {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  text-shadow: 1px 10px 5px #000;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.countdown-banner {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.countdown-banner.show {
+  z-index: 1;
+  background-color: #00000077;
+}
+
+#countdown {
+  font-size: 100px;
+  font-weight: 800;
+  animation: scaleFadeInOut 1s infinite;
+  opacity: 0;
+}
+
+@keyframes scaleFadeInOut {
+  0%, 100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
