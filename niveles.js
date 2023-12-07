@@ -2,7 +2,7 @@ import SJF from './1.js'
 import FCFS from './2.js'
 import RoundRobin from './3.js'
 import SRTF from './4.js'
-import HRRN from './5.JS'
+import HRRN from './5.js'
 
 export default [
   {
